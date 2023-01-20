@@ -1,0 +1,90 @@
+*{
+	font-family: sans-serif;
+}
+#header{
+	background-color: #1291DE;
+}
+#logo{
+	padding: 20px;
+}
+#menu{
+	float: right;
+	margin-right: 60px;
+	margin-top: 50px;
+}
+#contentbox1{
+	background-image: url('../images/bg1.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 200px;
+}
+#biblewisetitle{
+	font-size: 60px;
+	color: #1291DE;
+	position: relative;
+	right: 90px;
+	top: 20px
+}
+#biblewise{
+	font-size: 20px;
+	color: white;
+	position: relative;
+	right: 90px;
+}
+#contentbox2{
+	background-image: url('../images/bg2.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 50px;
+}
+#ptstrfy{
+	font-size: 60px;
+	color: #1291DE;
+	text-align: center;
+}
+#tlabel{
+	font-size: 25px;
+	color: #1291DE;
+}
+#label{
+	font-size: 20px;
+	color: white;
+}
+#alldiv1{
+	margin: auto;
+	display:flex;
+	align-items: center;
+	justify-content: space-between;
+	text-align: center;
+	position: relative;
+}
+#learnmore{
+	font-size: 20px;
+	color: white;
+	padding: 10px;
+	border-radius: 25px;
+	background-color: #1291DE;
+	padding: 15px;
+	width: 200px;
+	height: 150px;
+	position:relative;
+	top: 20px;
+}
+#tlabel1{
+	padding: 50px;
+	background-color: #191A1B;
+	border-radius: 25px;
+}
+#tlabel2{
+	padding: 50px;
+	background-color: #191A1B;
+	border-radius: 25px;
+}
+#tlabel3{
+	padding: 50px;
+	background-color: #191A1B;
+	border-radius: 25px;
+}
+	
+	
+	
