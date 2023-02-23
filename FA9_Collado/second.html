@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+	<button onclick="back()">RETURN</button>
+	<button onclick="next()">NEXT</button>
+	</head>
+	<body>
+	<img src="thumbsup.jpg" id="thumbsup">
+		<script>
+		function next(){
+		document.getElementById("thumbsup").src = "heart.jpg";
+		}
+		function back(){
+		document.getElementById("thumbsup").src = "thumbsup.jpg";
+		}
+		</script>
+	</html>
