@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Online Shop</title>
+        <style>
+        	body {background: lightblue; 
+            	font-family: arial;
+                color: navy;
+            }
+            button {padding: 10px; background:violet }
+            span {color: maroon}
+        </style>
+
+	</head>
+<body>
+	<h1>My Online Shop</h1>
+	
+	<h2>Item List</h2>
+	<ul>
+		<li>Item 1 - $10.00/unit</li>
+		<li>Item 2 - $15.00/unit</li>
+		<li>Item 3 - $20.00/unit</li>
+	</ul>
+	
+	<h2>Order Summary</h2>
+	<p>Item Selected: <span id="item"></span></p>
+	<p>Qty Bought: <span id="qty"></span></p>
+	<p>Amount to Pay for Item: $<span id="amount"></span></p>
+	<p>Current Total Bill: $<span id="total"></span></p>
+	
+	<button onclick="buyItem()">Buy Item</button>
+	<button onclick="clearOrder()">Clear</button>
+	
+	<script>
+		// The following prompts the user to enter an item number and quantity.
+		function buyItem() {
+			let itemNumber = prompt("Enter Item Number:");
+			let quantity = prompt("Enter Quantity:");
+			// The following checks if the quantity entered is an integer number.	
+			if (Number.isInteger(parseInt(quantity))) {
+				let itemSelected = "";
+				let amountToPay = 0;
+				// The following switches based on the item number entered and calculates the amount to pay.
+				switch(itemNumber) {
+					case "1":
+						itemSelected = "Item 1";
+						amountToPay = quantity * 10;
+						break;
+					case "2":
+						itemSelected = "Item 2";
+						amountToPay = quantity * 15;
+						break;
+					case "3":
+						itemSelected = "Item 3";
+						amountToPay = quantity * 20;
+						break;
+					default:
+						alert("Invalid Item Number");
+						return;
+				}
+				// The following updates the order summary based on the item selected and quantity bought.
+				document.getElementById("item").innerHTML = itemSelected;
+				document.getElementById("qty").innerHTML = quantity;
+				document.getElementById("amount").innerHTML = amountToPay.toFixed(2);
+				document.getElementById("total").innerHTML = (parseFloat(document.getElementById("total").innerHTML) + amountToPay).toFixed(2);
+			} else {
+				alert("Invalid Quantity. Please enter an integer number.");
+			}
+		}
+		
+		function clearOrder() {
+			document.getElementById("item").innerHTML = "";
+			document.getElementById("qty").innerHTML = "";
+			document.getElementById("amount").innerHTML = "";
+			document.getElementById("total").innerHTML = "0.00";
+		}
+	</script>
+    
+</body>
+</html>

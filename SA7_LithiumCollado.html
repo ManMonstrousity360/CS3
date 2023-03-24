@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="PJ Collado">
+		<title>Numerology</title>
+        <style>
+        	body {background: lightblue; 
+            	text-align: center;
+            	font-family: arial;
+                color: navy;
+            }
+            button {padding: 10px; background:violet }
+            span {font-size: 0.5em; color: maroon}
+        </style>
+
+	</head>
+<body>
+	<h1> Your Fortune is in your name </h1>
+	<h2> Your Name is: <span id="thename"> </span></h2>
+    <h2> Today's fortune: <span id="fortune"> </span></h2>
+    
+    <button onclick="getName()"> Click here to enter your name </button>
+    
+    <script>
+    	/* function to get name and fortune */
+        function getName() {
+            // get the name from the user using prompt and update it in the HTML
+            let name = prompt("Please enter your full name:");
+            document.getElementById("thename").textContent = name;
+            
+            // calculate the numerology digit from the length of the name
+            let length = name.length;
+            let numerologyDigit = 0;
+            while (length > 0) {
+                numerologyDigit += length % 10;
+                length = Math.floor(length / 10);
+            }
+            numerologyDigit %= 9;
+            if (numerologyDigit === 0) {
+                numerologyDigit = 9;
+            }
+            
+            // update the fortune in the HTML using switch-case
+            let fortune = "";
+            switch(numerologyDigit) {
+                case 1:
+                    fortune = "Today is a great day to start something new!";
+                    break;
+                case 2:
+                    fortune = "You will receive unexpected news today.";
+                    break;
+                case 3:
+                    fortune = "A creative opportunity will present itself to you today.";
+                    break;
+                case 4:
+                    fortune = "You will encounter a challenge today. Face it with courage.";
+                    break;
+                case 5:
+                    fortune = "Today is a good day to take risks.";
+                    break;
+                case 6:
+                    fortune = "You will have a joyful experience today.";
+                    break;
+                case 7:
+                    fortune = "You will have a moment of clarity and insight today.";
+                    break;
+                case 8:
+                    fortune = "Today is a good day for business and financial matters.";
+                    break;
+                case 9:
+                    fortune = "You will receive a gift or surprise today.";
+                    break;
+            }
+            document.getElementById("fortune").textContent = fortune;
+        }
+    </script>  
+</body>
+</html>

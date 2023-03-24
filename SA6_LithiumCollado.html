@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Final verification step using one-time password (OTP)">
+	<meta name="keywords" content="one-time password, OTP, verification, security">
+	<title>One Time Password </title>
+	<style>
+		body {
+			background: lightblue;
+			text-align: center;
+			font-family: arial;
+			color: navy;
+		}
+		button {
+			padding: 10px;
+			background: violet;
+		}
+		a {
+			font-size: 0.5em;
+			color: maroon;
+		}
+	</style>
+</head>
+<body onload="generateOTP()">
+	<h1> Final Verification Step </h1>
+	<h2> Current OTP: <span id="otp"> _ _ _ _ _ _ </span> <a href="#" onclick="generateOTP()"> New OTP </a></h2>
+	<button onclick="checkOTP()"> Enter the OTP as shown above </button>
+
+		<script>
+	 	// Define the JavaScript code for generating and checking OTP
+	 	function generateOTP() {
+			// Generate a 6-digit OTP and display it on the webpage
+			var otp = "";
+			var digits = "0123456789";
+			for (var i = 0; i < 6; i++) {
+				otp += digits[Math.floor(Math.random() * 10)];
+			}
+			document.getElementById("otp").textContent = otp;
+		}
+
+		function checkOTP() {
+			// Check if the entered OTP is correct and open the webpage if it matches
+			var currentOTP = document.getElementById("otp").textContent;
+			var enteredOTP = prompt("Please enter the OTP as shown on the screen:");
+			if (enteredOTP == currentOTP) {
+				window.open("https://www.youtube.com");
+			} else {
+				// Display an error message and generate a new OTP if the entered OTP is incorrect
+				alert("Sorry, the OTP you entered is incorrect. Please try again.");
+				generateOTP();
+			}
+		}
+	</script>
+</body>
+</html>
